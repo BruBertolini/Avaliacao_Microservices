@@ -14,14 +14,14 @@ public class TransactionDao {
     private ArrayList<> transactionList;
     
     TransactionDao(){
-        transactionList = new new HashMap<>();
+        this.transactionList = new new HashMap<>();
     }
 
     public void save(Transaction transaction) {
-        transactionList.put(transaction.timestamp, transaction.amout);
+        this.transactionList.put(transaction.timestamp, transaction.amout);
     }
     
-    public void getAll() {
-        return transactionList;
+    public HashMap<> getAll() {
+        return this.transactionList;
     }
 }
