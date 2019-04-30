@@ -13,14 +13,17 @@ import br.com.fiap.transaction.service.TransactionService;
 @org.springframework.transaction.annotation.Transactional
 public class TransactionDao {
 
-    @Autowired
-    private EntityManager entityManager;
-
-    public void save(Transaction transaction) {
-        getEntityManager().persist(transaction);
+    private ArrayList<> transactionList;
+    
+    TransactionDao(){
+        transactionList = new new HashMap<>();
     }
 
-    public EntityManager getEntityManager() {
-        return entityManager;
+    public void save(Transaction transaction) {
+        transactionList.put(transaction.timestamp, transaction.amout);
+    }
+    
+    public void getAll() {
+        return transactionList;
     }
 }
